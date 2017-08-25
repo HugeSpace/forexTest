@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>
+    <script src="js/date.js" type="text/javascript"></script>
+    <script src="js/ccyPair.js" type="text/javascript"></script>
+    <script src="js/checkAndSend.js" type="text/javascript"></script>
+</head>
+<body>
+    <form  method="post" id="signupSubmitFrm" >
+        <table border="1" valign="10px" width="40%" align="center">
+            <tr>
+                <td width="15%">Customer:</td>
+                <td><input type="text" required="" th:placeholder="Customer" autofocus="" id="customer" name="customer"/>
+                    <span id="nickError" class="blockError" style="display: none; color: red"> Customer not found, try again</span>
+                </td>
+            </tr>
+            <tr>
+                <td>ccyPair:</td>
+                <td><input id="ccyPair" name="ccyPair"/>
+                    <span id="ccyPairError"></span>
+                    <span id="ccyPairErrorJava" class="blockError" style="display: none; color: red"> It's not a couple</span>
+
+                </td>
+            </tr>
+            <tr>
+                <td>type:</td>
+                <td><input type="text" required="required" id="type" name="type"/>
+                    <span id="typeError" class="blockError" style="display: none; color: darkred"> Error type</span>
+                </td>
+            </tr>
+            <tr>
+                <td>direction:</td>
+                <td>
+                    <select id="direction" name="direction">
+                        <option>BUY</option>
+                        <option>SELL</option>
+                    </select>
+                    <!--<input type="text" required="required" id="direction" name="direction"/>-->
+
+                </td>
+            </tr>
+            <tr>
+                <td>trade date:</td>
+                <td><input class="selector" required="required" type="text" name="tradeDate" id="tradeDate" placeholder="yyyy-mm-dd"/>
+                    <span id="tradeDateError" class="blockError" style="display: none; color: black"> Error trade date</span>
+                </td>
+            </tr>
+            <tr>
+                <td>amount1</td>
+                <td><input type="text" id="amount1" name="amount1"/>
+                    <span id="amountError" class="blockError" style="display: none; color: green"> Amount or rate can't be NULL</span>
+                </td>
+            </tr>
+            <tr>
+                <td>rate</td>
+                <td><input type="text" id="rate" name="rate"/></td>
+            </tr>
+            <tr>
+                <td>amount2</td>
+                <td>
+                    <!--<span id="amount2" name="amount2" style="color: black"></span>-->
+                    <input type="text" value="" id="amount2" name="amount2" /> </td>
+            </tr>
+
+            <tr>
+                <td>value date:</td>
+                <td><input class="selector"  type="text" name="valueDate" id="valueDate" placeholder="yyyy-mm-dd"/>
+                    <span id="valueDateError" class="blockError" style="display: none; color: black"> Error value date</span>
+                </td>
+            </tr>
+            <tr>
+                <td>legal Entity:</td>
+                <td><input type="text" required="required" id="legalEntity" name="legalEntity"/>
+                    <span class="blockError" id="legalEntityError" style="display: none; color: black"> Legal Entity not found, try again</span>
+                </td>
+            </tr>
+            <tr>
+                <td>trader:</td>
+                <td><input type="text" required="required" id="trader" name="trader"/>
+                    <span id="traderError" class="blockError" style="display: none; color: black"> Trader not found, try again</span>
+                </td>
+            </tr>
+            <!--<tr>-->
+                <!--<td colspan="2" align="right">-->
+                    <!--<input type="button" style="width: 60px; height: 40px" id="submitBtn" name="submitBtn" value="Send" />-->
+                <!--</td>-->
+            <!--</tr>-->
+        </table>
+    </form>
+</body>
+</html>
